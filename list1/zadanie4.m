@@ -13,6 +13,7 @@ Y = rand(d, M)
 tic
 dsts(X, Y)
 toc
+
 function d = dsts(X, Y)
     n = size(X, 2)
     m = size(Y, 2)

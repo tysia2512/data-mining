@@ -1,6 +1,6 @@
 %%%%%%%%% a %%%%%%%%
 dist = makedist('Uniform', 'lower', -1, 'upper', 1)
-%figure
+figure
 subplot(2, 2, 1)
 nums10k = arrayfun(@(x) (x - 0.5) * 2, rand(1, 10000))
 h10k = histogram(nums10k, 100)
@@ -15,7 +15,7 @@ pdfu = pdf(dist, x)
 plot(x, pdfu, 'Linewidth', 1)
 
 %%%%%%%%% b %%%%%%%%
-%figure
+figure
 subplot(2, 2, 1)
 norm10k = normrnd(5, 3, [1, 10000])
 h10k = histogram(norm10k, 100)
@@ -30,7 +30,7 @@ pdfu = normpdf(x, 5, 3)
 plot(x, pdfu, 'Linewidth', 1)
 
 %%%%%%%%% c %%%%%%%%
-%figure
+figure
 x_mu = 2
 x_sd = 25
 y_mu = 3

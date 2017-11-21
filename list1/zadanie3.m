@@ -36,14 +36,16 @@ function ml = mat_len(X)
     ml = length(X)
 end
 
-function d = dot(x, y)
-    d = sum(arrayfun(@(i) x(i) * y(i), 1:size(x)))
-end
+%function d = dot(x, y)
+%    d = sum(arrayfun(@(i) x(i) * y(i), 1:size(x)))
+%end
 function ed = e_dist(x, y)
-    ed = sqrt(sum(arrayfun(@(i) (x(i) - y(i))^2, 1:size(x))))
+    %ed = sqrt(sum(arrayfun(@(i) (x(i) - y(i))^2, 1:size(x))))
+    ed = dot(transpose((x - y)), (x + y))
 end
 function a = w_avg(x, w)
-    a = sum(arrayfun(@(i) x(i) * w(i), 1:size(x))) / sum(w)
+    a = dot(x, w)
+    %a = sum(arrayfun(@(i) x(i) * w(i), 1:size(x))) / sum(w)
 end
 function l = length(x)
     xsq = arrayfun(@(x) x*x, x)
